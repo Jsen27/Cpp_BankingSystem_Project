@@ -1,4 +1,4 @@
-#include "Account.h"
+ï»¿#include "Account.h"
 #include "AccountHandler.h"
 #include "BankingCommonDec1.h"
 #include "HighCreditAccount.h"
@@ -9,20 +9,20 @@ void AccountHandler::ShowMenu() const
 {
 	cout << endl << endl;
 	cout << "-----Menu-----" << endl;
-	cout << "1. °èÁÂ°³¼³" << endl;
-	cout << "2. ÀÔ ±Ý" << endl;
-	cout << "3. Ãâ ±Ý" << endl;
-	cout << "4. °èÁÂÁ¤º¸ ÀüÃ¼ Ãâ·Â" << endl;
-	cout << "5. ÇÁ·Î±×·¥ Á¾·á" << endl;
-	cout << "¼±ÅÃ : ";
+	cout << "1. ê³„ì¢Œê°œì„¤" << endl;
+	cout << "2. ìž… ê¸ˆ" << endl;
+	cout << "3. ì¶œ ê¸ˆ" << endl;
+	cout << "4. ê³„ì¢Œì •ë³´ ì „ì²´ ì¶œë ¥" << endl;
+	cout << "5. í”„ë¡œê·¸ëž¨ ì¢…ë£Œ" << endl;
+	cout << "ì„ íƒ : ";
 	return;
 }
 void AccountHandler::MakeAccount()
 {
 	int sel;
-	cout << "[°èÁÂÁ¾·ù¼±ÅÃ]" << endl;
-	cout << "1.º¸Åë¿¹±Ý°èÁÂ 2.½Å¿ë½Å·Ú°èÁÂ" << endl;
-	cout << "¼±ÅÃ: "; cin >> sel;
+	cout << "[ê³„ì¢Œì¢…ë¥˜ì„ íƒ]" << endl;
+	cout << "1.ë³´í†µì˜ˆê¸ˆê³„ì¢Œ 2.ì‹ ìš©ì‹ ë¢°ê³„ì¢Œ" << endl;
+	cout << "ì„ íƒ: "; cin >> sel;
 	switch (sel)
 	{
 	case 1:
@@ -40,13 +40,13 @@ void AccountHandler::MakeNormalAccount()
 	char name[NAME_LEN];
 	int money;
 	int inter;
-	cout << "[º¸Åë¿¹±Ý°èÁÂ °³¼³]" << endl;
-	cout << "°èÁÂID : "; cin >> accID;
-	cout << "ÀÌ¸§: "; cin >> name;
-	cout << "ÀÜ¾×: "; cin >> money;
-	cout << "ÀÌÀÚÀ²: "; cin >> inter;
+	cout << "[ë³´í†µì˜ˆê¸ˆê³„ì¢Œ ê°œì„¤]" << endl;
+	cout << "ê³„ì¢ŒID : "; cin >> accID;
+	cout << "ì´ë¦„: "; cin >> name;
+	cout << "ìž”ì•¡: "; cin >> money;
+	cout << "ì´ìžìœ¨: "; cin >> inter;
 	accArr[accNum++] = new NormalAccount(accID, name, money, inter);
-	cout << "°èÁÂ°³¼³ ¿Ï·á" << endl;
+	cout << "ê³„ì¢Œê°œì„¤ ì™„ë£Œ" << endl;
 }
 void AccountHandler::MakeHighCreditAccount()
 {
@@ -55,12 +55,12 @@ void AccountHandler::MakeHighCreditAccount()
 	int money;
 	int inter;
 	char credit;
-	cout << "[½Å¿ë½Å·Ú°èÁÂ °³¼³]" << endl;
-	cout << "°èÁÂID : "; cin >> accID;
-	cout << "ÀÌ¸§: "; cin >> name;
-	cout << "ÀÜ¾×: "; cin >> money;
-	cout << "ÀÌÀÚÀ²: "; cin >> inter;
-	cout << "½Å¿ëµî±Þ: "; cin >> credit;
+	cout << "[ì‹ ìš©ì‹ ë¢°ê³„ì¢Œ ê°œì„¤]" << endl;
+	cout << "ê³„ì¢ŒID : "; cin >> accID;
+	cout << "ì´ë¦„: "; cin >> name;
+	cout << "ìž”ì•¡: "; cin >> money;
+	cout << "ì´ìžìœ¨: "; cin >> inter;
+	cout << "ì‹ ìš©ë“±ê¸‰: "; cin >> credit;
 	switch (credit)
 	{
 	case 'A':
@@ -73,51 +73,51 @@ void AccountHandler::MakeHighCreditAccount()
 		accArr[accNum++] = new HighCreditAccount(accID, name, money, inter, LEVEL_C);
 		break;
 	}
-	cout << "°èÁÂ°³¼³ ¿Ï·á" << endl;
+	cout << "ê³„ì¢Œê°œì„¤ ì™„ë£Œ" << endl;
 }
 void AccountHandler::DepositMoney()
 {
 	int n, pocket;
-	cout << "[ÀÔ ±Ý]" << endl;
-	cout << "°èÁÂ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ";
+	cout << "[ìž… ê¸ˆ]" << endl;
+	cout << "ê³„ì¢Œë²ˆí˜¸ë¥¼ ìž…ë ¥í•˜ì„¸ìš” : ";
 	cin >> n;
 	for (int i = 0; i < accNum; i++)
 	{
 		if (accArr[i]->GetaccID() == n)
 		{
-			cout << "ÀÔ±Ý¾×: "; cin >> pocket;
+			cout << "ìž…ê¸ˆì•¡: "; cin >> pocket;
 			accArr[i]->Deposit(pocket);
-			cout << "ÀÔ±Ý ¿Ï·á" << endl << endl;
+			cout << "ìž…ê¸ˆ ì™„ë£Œ" << endl << endl;
 			return;
 		}
 	}
-	cout << "À¯È¿ÇÏÁö ¾Ê´Â °èÁÂÀÔ´Ï´Ù." << endl;
+	cout << "ìœ íš¨í•˜ì§€ ì•ŠëŠ” ê³„ì¢Œìž…ë‹ˆë‹¤." << endl;
 	return;
 }
 void AccountHandler::WithDrawMoney()
 {
 	int n, pocket;
-	cout << "[Ãâ ±Ý]" << endl;
-	cout << "°èÁÂ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ";
+	cout << "[ì¶œ ê¸ˆ]" << endl;
+	cout << "ê³„ì¢Œë²ˆí˜¸ë¥¼ ìž…ë ¥í•˜ì„¸ìš” : ";
 	cin >> n;
 	for (int i = 0; i < accNum; i++)
 	{
 		if (accArr[i]->GetaccID() == n)
 		{
-			cout << "Ãâ±Ý¾× : "; cin >> pocket;
-			cout << accArr[i]->WithDraw(pocket) << "¿ø Ãâ±Ý ¿Ï·á" << endl;
+			cout << "ì¶œê¸ˆì•¡ : "; cin >> pocket;
+			cout << accArr[i]->WithDraw(pocket) << "ì› ì¶œê¸ˆ ì™„ë£Œ" << endl;
 			return;
 		}
 	}
-	cout << "À¯È¿ÇÏÁö ¾Ê´Â °èÁÂÀÔ´Ï´Ù." << endl;
+	cout << "ìœ íš¨í•˜ì§€ ì•ŠëŠ” ê³„ì¢Œìž…ë‹ˆë‹¤." << endl;
 	return;
 }
 void AccountHandler::ShowAllAccInfo() const
 {
-	cout << "[°èÁÂÁ¤º¸ ÀüÃ¼ Ãâ·Â]" << endl;
+	cout << "[ê³„ì¢Œì •ë³´ ì „ì²´ ì¶œë ¥]" << endl;
 	for (int i = 0; i < accNum; i++)
 		accArr[i]->ShowInfo();
-	cout << "ÀüÃ¼ Ãâ·Â ¿Ï·á" << endl;
+	cout << "ì „ì²´ ì¶œë ¥ ì™„ë£Œ" << endl;
 }
 AccountHandler::~AccountHandler()
 {

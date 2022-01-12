@@ -1,4 +1,4 @@
-#include "Account.h"
+ï»¿#include "Account.h"
 #include "BankingCommonDec1.h"
 Account::Account(int accID, char namestr[50], int money) :accID(accID), balance(money)
 {
@@ -25,9 +25,9 @@ int Account::WithDraw(int pocket)
 }
 void Account::ShowInfo() const
 {
-	cout << "°èÁÂ¹øÈ£: " << accID << endl;
-	cout << "ÀÌ¸§: " << cusName << endl;
-	cout << "ÀÜ¾×: " << balance << endl;
+	cout << "ê³„ì¢Œë²ˆí˜¸: " << accID << endl;
+	cout << "ì´ë¦„: " << cusName << endl;
+	cout << "ìž”ì•¡: " << balance << endl;
 }
 Account::~Account()
 {

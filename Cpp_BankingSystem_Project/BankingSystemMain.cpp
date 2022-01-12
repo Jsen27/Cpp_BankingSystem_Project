@@ -1,4 +1,4 @@
-#include "BankingCommonDec1.h"
+ï»¿#include "BankingCommonDec1.h"
 #include "AccountHandler.h"
 
 int main(void)
@@ -23,10 +23,10 @@ int main(void)
 			manager.ShowAllAccInfo();
 			break;
 		case EXIT:
-			cout << "ÇÁ·Î±×·¥ Á¾·á" << endl;
+			cout << "í”„ë¡œê·¸ëž¨ ì¢…ë£Œ" << endl;
 			return 0;
 		default:
-			cout << "Àß¸ø ÀÔ·ÂÇÏ¿´½À´Ï´Ù." << endl << endl;
+			cout << "ìž˜ëª» ìž…ë ¥í•˜ì˜€ìŠµë‹ˆë‹¤." << endl << endl;
 		}
 	}
 

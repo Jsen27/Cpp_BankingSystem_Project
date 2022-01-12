@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include "NormalAccount.h"
 class HighCreditAccount :public NormalAccount
 {
@@ -15,7 +15,7 @@ public:
 	void ShowInfo() const
 	{
 		NormalAccount::ShowInfo();
-		cout << "½Å¿ëµî±Þ: ";
+		cout << "ì‹ ìš©ë“±ê¸‰: ";
 		if (CreditRate == 7) cout << "A" << endl;
 		else if (CreditRate == 4) cout << "B" << endl;
 		else cout << "C" << endl;

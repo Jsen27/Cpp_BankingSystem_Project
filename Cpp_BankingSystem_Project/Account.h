@@ -1,10 +1,10 @@
-#pragma once
+ï»¿#pragma once
 class Account
 {
 private:
-	int accID;			//°èÁÂ¹øÈ£
-	int balance;        //ÀÜ¾×
-	char* cusName;         //ÀÌ¸§
+	int accID;			//ê³„ì¢Œë²ˆí˜¸
+	int balance;        //ì”ì•¡
+	char* cusName;         //ì´ë¦„
 public:
 	Account(int accID, char namestr[50], int money);
 	Account(const Account& copy);

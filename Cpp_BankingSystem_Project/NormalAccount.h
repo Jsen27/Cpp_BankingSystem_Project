@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include "Account.h"
 #include "BankingCommonDec1.h"
 class NormalAccount :public Account
@@ -16,6 +16,6 @@ public:
 	void ShowInfo() const
 	{
 		Account::ShowInfo();
-		cout << "ÀÌÀÚÀ²: " << interRate << "%" << endl;
+		cout << "ì´ìžìœ¨: " << interRate << "%" << endl;
 	}
 };

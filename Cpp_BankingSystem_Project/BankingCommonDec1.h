@@ -1,7 +1,8 @@
-﻿#pragma once
+#pragma once
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <cstring>
+#include <cstdlib>
 using namespace std;
 const int NAME_LEN = 20;
 

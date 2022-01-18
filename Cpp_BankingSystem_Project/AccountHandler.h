@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include "Account.h"
 
 class AccountHandler
@@ -10,10 +10,11 @@ public:
 	AccountHandler();
 	void ShowMenu() const;
 	void MakeAccount();
-	void MakeNormalAccount();
-	void MakeHighCreditAccount();
 	void DepositMoney();
 	void WithDrawMoney();
 	void ShowAllAccInfo() const;
 	~AccountHandler();
+protected:
+	void MakeNormalAccount();
+	void MakeHighCreditAccount();
 };

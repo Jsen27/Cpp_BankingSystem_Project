@@ -5,8 +5,10 @@ class HighCreditAccount :public NormalAccount
 private:
 	int CreditRate;
 public:
-	HighCreditAccount(int accID, char namestr[50], int money, int inter, int credit)
-		:NormalAccount(accID, namestr, money, inter), CreditRate(credit) {}
+	/*HighCreditAccount(int accID, char namestr[50], int money, int inter, int credit)
+		:NormalAccount(accID, namestr, money, inter), CreditRate(credit) {}*/
+	HighCreditAccount(int accID, String name, int money, int inter, int credit)
+		:NormalAccount(accID, name, money, inter), CreditRate(credit) {}
 	void Deposit(int pocket)
 	{
 		NormalAccount::Deposit(pocket);

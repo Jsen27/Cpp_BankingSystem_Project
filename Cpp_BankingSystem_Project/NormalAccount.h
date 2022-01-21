@@ -6,8 +6,10 @@ class NormalAccount :public Account
 private:
 	int interRate;
 public:
-	NormalAccount(int accID, char namestr[50], int money, int inter)
-		:Account(accID, namestr, money), interRate(inter) {}
+	/*NormalAccount(int accID, char namestr[50], int money, int inter)
+		:Account(accID, namestr, money), interRate(inter) {}*/
+	NormalAccount(int accID, String name, int money, int inter)
+		:Account(accID, name, money), interRate(inter) {}
 	void Deposit(int pocket)
 	{
 		Account::Deposit(pocket);

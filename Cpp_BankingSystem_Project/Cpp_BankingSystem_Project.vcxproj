@@ -140,7 +140,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Account.cpp" />
-    <ClCompile Include="AccountArray.cpp" />
     <ClCompile Include="AccountHandler.cpp" />
     <ClCompile Include="BankingSystemMain.cpp" />
     <ClCompile Include="String.cpp" />
@@ -149,7 +148,7 @@
     <ClInclude Include="Account.h" />
     <ClInclude Include="AccountHandler.h" />
     <ClInclude Include="BankingCommonDec1.h" />
-    <ClInclude Include="AccountArray.h" />
+    <ClInclude Include="BoundCheckArray.h" />
     <ClInclude Include="HighCreditAccount.h" />
     <ClInclude Include="NormalAccount.h" />
     <ClInclude Include="String.h" />

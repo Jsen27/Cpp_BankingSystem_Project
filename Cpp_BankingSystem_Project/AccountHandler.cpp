@@ -86,10 +86,21 @@ void AccountHandler::DepositMoney()
 	{
 		if (accArr[i]->GetaccID() == n)
 		{
-			cout << "입금액: "; cin >> pocket;
-			accArr[i]->Deposit(pocket);
-			cout << "입금 완료" << endl << endl;
-			return;
+			while (1)
+			{
+				try
+				{
+					cout << "입금액: "; cin >> pocket;
+					accArr[i]->Deposit(pocket);
+					cout << "입금 완료" << endl << endl;
+					return;
+				}
+				catch (DepositException& expn)
+				{
+					expn.Reason();
+					cout << "입금할 금액을 다시 입력해주시길 바랍니다." << endl << endl;
+				}
+			}
 		}
 	}
 	cout << "유효하지 않는 계좌입니다." << endl;
@@ -105,9 +116,20 @@ void AccountHandler::WithDrawMoney()
 	{
 		if (accArr[i]->GetaccID() == n)
 		{
-			cout << "출금액 : "; cin >> pocket;
-			cout << accArr[i]->WithDraw(pocket) << "원 출금 완료" << endl;
-			return;
+			while (1)
+			{
+				try
+				{
+					cout << "출금액 : "; cin >> pocket;
+					cout << accArr[i]->WithDraw(pocket) << "원 출금 완료" << endl;
+					return;
+				}
+				catch (WithDrawException& expn)
+				{
+					expn.Reason();
+					cout << "출금할 금액을 다시 입력해주시길 바랍니다." << endl << endl;
+				}
+			}
 		}
 	}
 	cout << "유효하지 않는 계좌입니다." << endl;

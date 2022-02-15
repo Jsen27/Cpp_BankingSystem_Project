@@ -18,3 +18,21 @@ public:
 	virtual void ShowInfo() const;
 	//~Account();
 };
+
+class DepositException
+{
+private:
+	int pocket;
+public:
+	DepositException(int pocket);
+	void Reason();
+};
+
+class WithDrawException
+{
+private:
+	int pocket;
+public:
+	WithDrawException(int pocket);
+	void Reason();
+};

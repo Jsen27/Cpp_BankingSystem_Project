@@ -22,12 +22,15 @@ Account::Account(int accID, String name, int money) :accID(accID), balance(money
 int Account::GetaccID() const { return accID; }
 void Account::Deposit(int pocket)
 {
+	if (pocket < 0)
+		throw DepositException(pocket);
+
 	balance += pocket;
 }
 int Account::WithDraw(int pocket)
 {
 	if (balance < pocket)
-		return 0;
+		throw WithDrawException(pocket);
 
 	balance -= pocket;
 	return pocket;
@@ -38,6 +41,17 @@ void Account::ShowInfo() const
 	cout << "이름: " << cusName << endl;
 	cout << "잔액: " << balance << endl;
 }
+DepositException::DepositException(int pocket) :pocket(pocket) {}
+void DepositException::Reason()
+{
+	cout << pocket << "원을 입금할 수 없습니다." << endl;
+}
+WithDrawException::WithDrawException(int pocket) : pocket(pocket) {}
+void WithDrawException::Reason()
+{
+	cout << pocket << "원을 출금할 수 없습니다." << endl;
+}
+
 //Account::~Account()
 //{
 //	delete[]cusName;
